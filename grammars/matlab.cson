@@ -122,7 +122,7 @@
     ]
   'Duality':
     'patterns': [
-      'match': '[[:alpha:]][[:alnum:]]*\\s+([^ \\^+\\-\\*/\\(\\{\\=\'].*)'
+      'match': '[[:alpha:]][[:alnum:]]*\\s+([^ <>\\^+\\-\\*/\\(\\{\\=\'\\.].*)'
       'captures':
         '1':
           'name': 'string.command.parameters.matlab'
