@@ -1,0 +1,16 @@
+{
+  "name": "language-matlab",
+  "version": "0.0.1",
+  "description": "MATLAB language support for Atom",
+  "keywords": [
+    "matlab", "syntax-highlighting"
+  ],
+  "repository": "https://github.com/atom/language-matlab",
+  "license": "MIT",
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  },
+  "dependencies": {
+  }
+}

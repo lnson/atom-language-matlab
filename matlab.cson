@@ -1,0 +1,129 @@
+'scopeName': 'source.m'
+'name': 'MATLAB'
+'fileTypes': ['m']
+'patterns': [
+  {
+    'match': '\\b(function|classdef|properties|methods|enumeration)\\b'
+    'name': 'keyword.block.begin.matlab'
+  }
+  {
+    'match': '\\bend\\b'
+    'name': 'keyword.block.end.matlab'
+  }
+  {
+    'match': '\\b(if|else|elseif|while|for|try|catch|return|break|switch|case|otherwise)\\b'
+    'name': 'keyword.control.matlab'
+  }
+  {
+    'include': '#MatlabStrings'
+  }
+  {
+    'include': '#Comments'
+  }
+  {
+    'include': '#LineContinuation'
+  }
+  {
+    'include': '#Numbers'
+  }
+  {
+    'include': '#OtherConstants'
+  }
+  {
+    'include': '#SystemCommand'
+  }
+  {
+    'include': '#Duality'
+  }
+]
+'repository':
+  'MatlabStrings':
+    'patterns': [
+      {
+        'match': '\'(([^\']*(\'\')*[^\']*)*)\''
+        'begin': '\''
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.begin.string.matlab'
+        'end': '\''
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.end.string.matlab'
+        'captures':
+          '1':
+            'name': 'punctuation.definition.string.matlab'
+            'patterns': [
+              {
+                'include': '#EscapedSingleQuote'
+              }
+            ]
+      }
+    ]
+  'EscapedSingleQuote':
+    'patterns': [
+      {
+        'match': '\'\''
+        'name': 'constant.character.literal.single.quote.matlab'
+      }
+    ]
+  'Comments':
+    'patterns': [
+      {
+        'begin': '%\\{'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.block.comment.begin.matlab'
+        'end': '%\\}'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.block.comment.end.matlab'
+        'name': 'comment.block.matlab'
+      }
+      {
+        'begin': '%'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.matlab'
+        'end': '\\n'
+        'name': 'comment.line.matlab'
+      }
+    ]
+  'LineContinuation':
+    'patterns': [
+      {
+        'match': '(\\.\\.\\.)(.*)\\n'
+        'captures':
+          '1':
+            'name': 'constant.character.line-continuation.matlab'
+          '2':
+            'name': 'comment.line.matlab'
+      }
+    ]
+  'Numbers':
+    'patterns': [
+      'match': '\\b([0-9]+(\\.[0-9]+)?([e|E](|[+-])[0-9]+)?)\\b(\\s*i\\b)?'
+      'name': 'constant.numeric.matlab'
+    ]
+  'OtherConstants':
+    'patterns': [
+      'match': '\\b(true|false)\\b'
+      'name': 'constant.language.matlab'
+    ]
+  'SystemCommand':
+    'patterns': [
+      'match': '(\\!)\\s*([[:alpha:]][[:alnum:]]*)(.*)\\n'
+      'captures':
+        '1':
+          'name': 'constant.command.name.matlab'
+        '2':
+          'name': 'constant.command.name.matlab'
+        '3':
+          'name': 'string.command.parameters.matlab'
+    ]
+  'Duality':
+    'patterns': [
+      'match': '[[:alpha:]][[:alnum:]]*\\s+([^ \\^+\\-\\*/\\(\\{\\=\'].*)'
+      'captures':
+        '1':
+          'name': 'string.command.parameters.matlab'
+    ]

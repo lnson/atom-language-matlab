@@ -1,0 +1,16 @@
+'.source.m':
+  'editor':
+    'foldEndPattern': '(?<!\\*)\\*\\*/|^\\s*\\}'
+    'commentStart': '% '
+    'increaseIndentPattern': '(?x)
+      ^ \\s* (if|else|elseif) \\b
+      |^ \\s* (for|while) \\b
+      |^ \\s* function \\b
+      |^ \\s* (classdef|methods|properties|enumeration) \\b
+      | (^|[^\\.])\\.\\.\\.
+      '
+    'decreaseIndentPattern': '(?x)
+      ^ \\s* end \\s* $
+      |^ \\s *elseif \\s* $
+      |(?<=\\.\\.\\.).*\n((?!\\.\\.\\.).)*[\n|$]
+      '
