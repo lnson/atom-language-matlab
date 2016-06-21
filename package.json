@@ -6,7 +6,7 @@
     "matlab",
     "syntax-highlighting"
   ],
-  "repository": "https://github.com/atom/language-matlab",
+  "repository": "https://github.com/lnson/atom-language-matlab",
   "license": "MIT",
   "engines": {
     "atom": "*",
