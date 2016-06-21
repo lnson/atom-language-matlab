@@ -5,6 +5,7 @@
     'increaseIndentPattern': '(?x)
       ^ \\s* (if|else|elseif) \\b
       |^ \\s* (for|while) \\b
+      |^ \\s* (try|catch) \\b
       |^ \\s* function \\b
       |^ \\s* (classdef|methods|properties|enumeration) \\b
       | (^|[^\\.])\\.\\.\\.
